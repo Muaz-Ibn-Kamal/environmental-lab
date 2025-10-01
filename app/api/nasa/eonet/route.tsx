@@ -11,7 +11,7 @@ export async function GET() {
     })
     // </CHANGE>
   } catch (error) {
-    console.error("[v0] Error in EONET API route:", error)
+    console.error(" Error in EONET API route:", error)
     return NextResponse.json(
       {
         events: [],

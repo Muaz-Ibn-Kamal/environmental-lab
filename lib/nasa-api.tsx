@@ -121,20 +121,20 @@ async function fetchNASAData(endpoint: string, params: Record<string, string> = 
 
     if (!response.ok) {
       const errorBody = await response.text()
-      console.warn(`[v0] NASA API returned ${response.status}: ${errorBody}`)
+      console.warn(` NASA API returned ${response.status}: ${errorBody}`)
       return null
     }
 
     return await response.json()
   } catch (error) {
-    console.warn("[v0] NASA API request failed:", error instanceof Error ? error.message : error)
+    console.warn(" NASA API request failed:", error instanceof Error ? error.message : error)
     return null
   }
 }
 
 export async function fetchEONETEvents() {
   if (USE_MOCK_DATA) {
-    console.log("[v0] Using mock EONET data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using  EONET data (set USE_REAL_NASA_API=true to use real API)")
     return MOCK_EONET_EVENTS
   }
 
@@ -144,7 +144,7 @@ export async function fetchEONETEvents() {
   })
 
   if (!data) {
-    console.log("[v0] NASA API unavailable, using mock EONET data")
+    console.log(" NASA API unavailable, using mock EONET data")
     return MOCK_EONET_EVENTS
   }
 
@@ -153,14 +153,14 @@ export async function fetchEONETEvents() {
 
 export async function fetchAPOD() {
   if (USE_MOCK_DATA) {
-    console.log("[v0] Using mock APOD data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using mock APOD data (set USE_REAL_NASA_API=true to use real API)")
     return null
   }
 
   const data = await fetchNASAData("/planetary/apod")
 
   if (!data) {
-    console.log("[v0] NASA API unavailable, APOD not available")
+    console.log(" NASA API unavailable, APOD not available")
     return null
   }
 
@@ -169,7 +169,7 @@ export async function fetchAPOD() {
 
 export async function fetchNEO(startDate?: string, endDate?: string) {
   if (USE_MOCK_DATA) {
-    console.log("[v0] Using mock NEO data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using mock NEO data (set USE_REAL_NASA_API=true to use real API)")
     return { near_earth_objects: {} }
   }
 
@@ -183,7 +183,7 @@ export async function fetchNEO(startDate?: string, endDate?: string) {
   })
 
   if (!data) {
-    console.log("[v0] NASA API unavailable, using empty NEO data")
+    console.log(" NASA API unavailable, using empty NEO data")
     return { near_earth_objects: {} }
   }
 
@@ -193,6 +193,6 @@ export async function fetchNEO(startDate?: string, endDate?: string) {
 export async function fetchSatelliteData() {
   // Note: NASA doesn't have a direct satellite tracking API in their public API
   // This would typically come from Space-Track.org or similar services
-  console.log("[v0] Using mock satellite data (real-time satellite tracking requires Space-Track.org API)")
+  console.log(" Using  satellite data (real-time satellite tracking requires Space-Track.org API)")
   return MOCK_SATELLITE_DATA
 }
