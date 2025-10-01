@@ -25,14 +25,9 @@ export function TeamSection() {
       role: "Systems & Security Engineer",
       expertise: [
         "Low-Level Systems",
-        "OS Internals",
         "Cybersecurity",
-        "Penetration Testing",
         "Backend Development",
         "DevSecOps",
-        "Embedded Systems",
-        "Intrusion Detection",
-        "Server Automation",
       ],
       image: "/team/mahbub-anam.jpg",
     },
@@ -45,7 +40,7 @@ export function TeamSection() {
     {
       name: "Md Mirajul Islam",
       role: "Business Strategist",
-      expertise: ["Business Model Crafting", "Business Analysis", "Market Research"],
+      expertise: ["Business Model", "Business Analysis", "Market Research"],
       image: "/team/mirajul-islam.jpg",
     },
     {
@@ -63,11 +58,11 @@ export function TeamSection() {
   ]
 
   return (
-    <section className="py-20 px-4 relative bg-gradient-to-b from-background via-accent/5 to-background">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+    <section className="py-16 px-4 relative bg-gradient-to-b from-background via-accent/5 to-background">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-4 text-balance"
+            className="text-3xl md:text-4xl font-bold mb-3"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -75,46 +70,50 @@ export function TeamSection() {
             Meet Our Team
           </motion.h2>
           <motion.p
-            className="text-xl text-muted-foreground max-w-2xl mx-auto text-balance"
+            className="text-base text-muted-foreground max-w-xl mx-auto"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            A diverse group of experts dedicated to advancing space sustainability and environmental monitoring
+            A passionate group of innovators shaping the future of space sustainability
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {teamMembers.map((member, i) => (
             <motion.div
               key={member.name}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <Card className="overflow-hidden group hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/20">
-                <div className="aspect-square relative overflow-hidden">
+              <Card className="overflow-hidden rounded-2xl group hover:shadow-lg hover:shadow-primary/10 transition-all duration-500">
+                <div className="relative w-full h-56 overflow-hidden">
                   <Image
                     src={member.image || "/placeholder.svg"}
                     alt={member.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500 rounded-t-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-primary font-semibold mb-4">{member.role}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {member.expertise.map((skill) => (
+                <CardContent className="p-4 text-center">
+                  <h3 className="text-lg font-semibold">{member.name}</h3>
+                  <p className="text-sm text-primary mb-3">{member.role}</p>
+                  <div className="flex flex-wrap justify-center gap-1">
+                    {member.expertise.slice(0, 3).map((skill) => (
                       <Badge
                         key={skill}
                         variant="secondary"
-                        className="text-xs group-hover:bg-primary/20 transition-colors"
+                        className="text-[10px] px-2 py-0.5 group-hover:bg-primary/10"
                       >
                         {skill}
                       </Badge>
                     ))}
+                    {member.expertise.length > 3 && (
+                      <Badge variant="outline" className="text-[10px] px-2 py-0.5">
+                        +{member.expertise.length - 3}
+                      </Badge>
+                    )}
                   </div>
                 </CardContent>
               </Card>

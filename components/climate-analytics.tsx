@@ -1,11 +1,35 @@
 "use client"
-
 import { useEffect, useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Legend } from "recharts"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import {
+  Bar,
+  BarChart,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Legend,
+} from "recharts"
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+} from "@/components/ui/chart"
 
 interface ClimateMetrics {
   country: string
@@ -57,23 +81,23 @@ export function ClimateAnalytics() {
   const chartConfig = {
     co2Emissions: {
       label: "CO₂ Emissions",
-      color: "hsl(var(--chart-1))",
+      color: "#2563eb", // Blue
     },
     deforestation: {
       label: "Deforestation",
-      color: "hsl(var(--chart-2))",
+      color: "#dc2626", // Red
     },
     carbonStock: {
       label: "Carbon Stock",
-      color: "hsl(var(--chart-3))",
+      color: "#16a34a", // Green
     },
     waterStress: {
       label: "Water Stress",
-      color: "hsl(var(--chart-4))",
+      color: "#ca8a04", // Yellow
     },
     urbanEmissions: {
       label: "Urban Emissions",
-      color: "hsl(var(--chart-5))",
+      color: "#7c3aed", // Purple
     },
   }
 
@@ -82,7 +106,9 @@ export function ClimateAnalytics() {
       <Card>
         <CardHeader>
           <CardTitle>Climate Analytics Dashboard</CardTitle>
-          <CardDescription>AI-powered environmental monitoring and analysis</CardDescription>
+          <CardDescription>
+            AI-powered environmental monitoring and analysis
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Tabs defaultValue="overview" className="w-full">
@@ -93,17 +119,24 @@ export function ClimateAnalytics() {
               <TabsTrigger value="water">Water Resources</TabsTrigger>
             </TabsList>
 
+            {/* ===== OVERVIEW ===== */}
             <TabsContent value="overview" className="space-y-6 mt-6">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <Card>
                   <CardHeader className="pb-3">
                     <CardDescription>Global CO₂ Emissions</CardDescription>
                     <CardTitle className="text-3xl font-bold">
-                      {(metrics.reduce((sum, m) => sum + m.co2Emissions, 0) / 1000).toFixed(1)}B
+                      {(
+                        metrics.reduce((sum, m) => sum + m.co2Emissions, 0) /
+                        1000
+                      ).toFixed(1)}
+                      B
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-xs text-muted-foreground">Metric tons annually</div>
+                    <div className="text-xs text-muted-foreground">
+                      Metric tons annually
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -111,11 +144,17 @@ export function ClimateAnalytics() {
                   <CardHeader className="pb-3">
                     <CardDescription>Deforestation Rate</CardDescription>
                     <CardTitle className="text-3xl font-bold">
-                      {(metrics.reduce((sum, m) => sum + m.deforestation, 0) / metrics.length).toFixed(1)}%
+                      {(
+                        metrics.reduce((sum, m) => sum + m.deforestation, 0) /
+                        metrics.length
+                      ).toFixed(1)}
+                      %
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-xs text-muted-foreground">Average annual loss</div>
+                    <div className="text-xs text-muted-foreground">
+                      Average annual loss
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -123,11 +162,16 @@ export function ClimateAnalytics() {
                   <CardHeader className="pb-3">
                     <CardDescription>Water Stress Index</CardDescription>
                     <CardTitle className="text-3xl font-bold">
-                      {(metrics.reduce((sum, m) => sum + m.waterStress, 0) / metrics.length).toFixed(0)}
+                      {(
+                        metrics.reduce((sum, m) => sum + m.waterStress, 0) /
+                        metrics.length
+                      ).toFixed(0)}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="text-xs text-muted-foreground">Global average score</div>
+                    <div className="text-xs text-muted-foreground">
+                      Global average score
+                    </div>
                   </CardContent>
                 </Card>
               </div>
@@ -135,7 +179,9 @@ export function ClimateAnalytics() {
               <Card>
                 <CardHeader>
                   <CardTitle>Country Selector</CardTitle>
-                  <CardDescription>Select a country to view detailed metrics</CardDescription>
+                  <CardDescription>
+                    Select a country to view detailed metrics
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-2 md:grid-cols-5 gap-2">
@@ -149,8 +195,12 @@ export function ClimateAnalytics() {
                             : "border-border hover:border-primary/50 hover:bg-accent/50"
                         }`}
                       >
-                        <div className="font-semibold text-sm">{metric.country}</div>
-                        <div className="text-xs text-muted-foreground mt-1">{metric.countryCode}</div>
+                        <div className="font-semibold text-sm">
+                          {metric.country}
+                        </div>
+                        <div className="text-xs text-muted-foreground mt-1">
+                          {metric.countryCode}
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -162,44 +212,84 @@ export function ClimateAnalytics() {
                   <CardHeader>
                     <CardTitle className="flex items-center justify-between">
                       <span>{selectedCountry.country} Metrics</span>
-                      <Badge variant="outline">{selectedCountry.countryCode}</Badge>
+                      <Badge variant="outline">
+                        {selectedCountry.countryCode}
+                      </Badge>
                     </CardTitle>
-                    <CardDescription>Detailed environmental indicators</CardDescription>
+                    <CardDescription>
+                      Detailed environmental indicators
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                       <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">CO₂ Emissions</div>
-                        <div className="text-2xl font-bold">{selectedCountry.co2Emissions.toLocaleString()}</div>
-                        <div className="text-xs text-muted-foreground">MT/year</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">Deforestation</div>
-                        <div className="text-2xl font-bold">{selectedCountry.deforestation.toFixed(1)}%</div>
-                        <div className="text-xs text-muted-foreground">Annual rate</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">Carbon Stock</div>
-                        <div className="text-2xl font-bold">{selectedCountry.carbonStock.toLocaleString()}</div>
-                        <div className="text-xs text-muted-foreground">MT stored</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">Water Stress</div>
-                        <div className="text-2xl font-bold">{selectedCountry.waterStress}</div>
-                        <div className="text-xs text-muted-foreground">Index score</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">Urban Emissions</div>
-                        <div className="text-2xl font-bold">{selectedCountry.urbanEmissions.toLocaleString()}</div>
-                        <div className="text-xs text-muted-foreground">MT/year</div>
-                      </div>
-                      <div className="space-y-1">
-                        <div className="text-sm text-muted-foreground">Last Updated</div>
-                        <div className="text-sm font-mono">
-                          {new Date(selectedCountry.lastUpdated).toLocaleDateString()}
+                        <div className="text-sm text-muted-foreground">
+                          CO₂ Emissions
+                        </div>
+                        <div className="text-2xl font-bold">
+                          {selectedCountry.co2Emissions.toLocaleString()}
                         </div>
                         <div className="text-xs text-muted-foreground">
-                          {new Date(selectedCountry.lastUpdated).toLocaleTimeString()}
+                          MT/year
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-sm text-muted-foreground">
+                          Deforestation
+                        </div>
+                        <div className="text-2xl font-bold">
+                          {selectedCountry.deforestation.toFixed(1)}%
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          Annual rate
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-sm text-muted-foreground">
+                          Carbon Stock
+                        </div>
+                        <div className="text-2xl font-bold">
+                          {selectedCountry.carbonStock.toLocaleString()}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          MT stored
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-sm text-muted-foreground">
+                          Water Stress
+                        </div>
+                        <div className="text-2xl font-bold">
+                          {selectedCountry.waterStress}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          Index score
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-sm text-muted-foreground">
+                          Urban Emissions
+                        </div>
+                        <div className="text-2xl font-bold">
+                          {selectedCountry.urbanEmissions.toLocaleString()}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          MT/year
+                        </div>
+                      </div>
+                      <div className="space-y-1">
+                        <div className="text-sm text-muted-foreground">
+                          Last Updated
+                        </div>
+                        <div className="text-sm font-mono">
+                          {new Date(
+                            selectedCountry.lastUpdated
+                          ).toLocaleDateString()}
+                        </div>
+                        <div className="text-xs text-muted-foreground">
+                          {new Date(
+                            selectedCountry.lastUpdated
+                          ).toLocaleTimeString()}
                         </div>
                       </div>
                     </div>
@@ -208,11 +298,14 @@ export function ClimateAnalytics() {
               )}
             </TabsContent>
 
+            {/* ===== EMISSIONS ===== */}
             <TabsContent value="emissions" className="mt-6">
               <Card>
                 <CardHeader>
                   <CardTitle>CO₂ Emissions by Country</CardTitle>
-                  <CardDescription>Annual carbon dioxide emissions in metric tons</CardDescription>
+                  <CardDescription>
+                    Annual carbon dioxide emissions in metric tons
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[400px]">
@@ -222,7 +315,11 @@ export function ClimateAnalytics() {
                         <XAxis dataKey="countryCode" />
                         <YAxis />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="co2Emissions" fill="var(--color-co2Emissions)" name="CO₂ Emissions" />
+                        <Bar
+                          dataKey="co2Emissions"
+                          fill={chartConfig.co2Emissions.color}
+                          name="CO₂ Emissions"
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -232,7 +329,9 @@ export function ClimateAnalytics() {
               <Card className="mt-6">
                 <CardHeader>
                   <CardTitle>Urban vs Total Emissions</CardTitle>
-                  <CardDescription>Comparison of urban and total emissions</CardDescription>
+                  <CardDescription>
+                    Comparison of urban and total emissions
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[400px]">
@@ -246,13 +345,13 @@ export function ClimateAnalytics() {
                         <Line
                           type="monotone"
                           dataKey="co2Emissions"
-                          stroke="var(--color-co2Emissions)"
+                          stroke={chartConfig.co2Emissions.color}
                           name="Total Emissions"
                         />
                         <Line
                           type="monotone"
                           dataKey="urbanEmissions"
-                          stroke="var(--color-urbanEmissions)"
+                          stroke={chartConfig.urbanEmissions.color}
                           name="Urban Emissions"
                         />
                       </LineChart>
@@ -262,21 +361,33 @@ export function ClimateAnalytics() {
               </Card>
             </TabsContent>
 
+            {/* ===== DEFORESTATION ===== */}
             <TabsContent value="deforestation" className="mt-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Deforestation Rates</CardTitle>
-                  <CardDescription>Annual forest loss percentage by country</CardDescription>
+                  <CardDescription>
+                    Annual forest loss percentage by country
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[400px]">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={metrics}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="country" angle={-45} textAnchor="end" height={100} />
+                        <XAxis
+                          dataKey="country"
+                          angle={-45}
+                          textAnchor="end"
+                          height={100}
+                        />
                         <YAxis />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="deforestation" fill="var(--color-deforestation)" name="Deforestation Rate %" />
+                        <Bar
+                          dataKey="deforestation"
+                          fill={chartConfig.deforestation.color}
+                          name="Deforestation Rate %"
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -286,7 +397,9 @@ export function ClimateAnalytics() {
               <Card className="mt-6">
                 <CardHeader>
                   <CardTitle>Carbon Stock Analysis</CardTitle>
-                  <CardDescription>Total carbon stored in forests (metric tons)</CardDescription>
+                  <CardDescription>
+                    Total carbon stored in forests (metric tons)
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[400px]">
@@ -296,7 +409,11 @@ export function ClimateAnalytics() {
                         <XAxis dataKey="countryCode" />
                         <YAxis />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="carbonStock" fill="var(--color-carbonStock)" name="Carbon Stock" />
+                        <Bar
+                          dataKey="carbonStock"
+                          fill={chartConfig.carbonStock.color}
+                          name="Carbon Stock"
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -304,21 +421,33 @@ export function ClimateAnalytics() {
               </Card>
             </TabsContent>
 
+            {/* ===== WATER ===== */}
             <TabsContent value="water" className="mt-6">
               <Card>
                 <CardHeader>
                   <CardTitle>Water Stress Index</CardTitle>
-                  <CardDescription>Water scarcity and stress levels by country</CardDescription>
+                  <CardDescription>
+                    Water scarcity and stress levels by country
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer config={chartConfig} className="h-[400px]">
                     <ResponsiveContainer width="100%" height="100%">
                       <BarChart data={metrics}>
                         <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="country" angle={-45} textAnchor="end" height={100} />
+                        <XAxis
+                          dataKey="country"
+                          angle={-45}
+                          textAnchor="end"
+                          height={100}
+                        />
                         <YAxis />
                         <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="waterStress" fill="var(--color-waterStress)" name="Water Stress Index" />
+                        <Bar
+                          dataKey="waterStress"
+                          fill={chartConfig.waterStress.color}
+                          name="Water Stress Index"
+                        />
                       </BarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
@@ -334,7 +463,9 @@ export function ClimateAnalytics() {
                     <div className="text-2xl font-bold text-green-500">
                       {metrics.filter((m) => m.waterStress < 33).length}
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1">Countries</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      Countries
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -344,9 +475,15 @@ export function ClimateAnalytics() {
                   </CardHeader>
                   <CardContent>
                     <div className="text-2xl font-bold text-yellow-500">
-                      {metrics.filter((m) => m.waterStress >= 33 && m.waterStress < 66).length}
+                      {
+                        metrics.filter(
+                          (m) => m.waterStress >= 33 && m.waterStress < 66
+                        ).length
+                      }
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1">Countries</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      Countries
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -358,7 +495,9 @@ export function ClimateAnalytics() {
                     <div className="text-2xl font-bold text-red-500">
                       {metrics.filter((m) => m.waterStress >= 66).length}
                     </div>
-                    <div className="text-xs text-muted-foreground mt-1">Countries</div>
+                    <div className="text-xs text-muted-foreground mt-1">
+                      Countries
+                    </div>
                   </CardContent>
                 </Card>
               </div>
