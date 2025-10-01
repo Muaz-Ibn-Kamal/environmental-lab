@@ -1,6 +1,5 @@
-# 🚀 Project Name – Sustainable Commercialization of Low Earth Orbit (LEO)
+# 🚀 Project Name – LEO Environmental Lab
 
-![NASA Space Apps](https://www.nasa.gov/sites/default/files/thumbnails/image/spaceapps-logo.png)
 
 ---
 
