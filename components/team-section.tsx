@@ -52,7 +52,7 @@ export function TeamSection() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 px-4 bg-black text-white">
       <div className="max-w-7xl mx-auto text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-bold mb-3"
@@ -63,7 +63,7 @@ export function TeamSection() {
           Meet Our Team
         </motion.h2>
         <motion.p
-          className="text-lg text-muted-foreground max-w-2xl mx-auto"
+          className="text-lg text-gray-300 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -82,7 +82,7 @@ export function TeamSection() {
             className="flex flex-col items-center max-w-[200px] text-center"
           >
             {/* Circular Image */}
-            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-gray-100 shadow-lg group hover:shadow-xl transition-shadow duration-500">
+            <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-gray-700 shadow-lg group hover:shadow-xl transition-shadow duration-500">
               <Image
                 src={member.image || "/placeholder.svg"}
                 alt={member.name}
@@ -92,7 +92,7 @@ export function TeamSection() {
             </div>
 
             {/* Name & Role */}
-            <h3 className="mt-4 text-lg font-semibold">{member.name}</h3>
+            <h3 className="mt-4 text-lg font-semibold text-white">{member.name}</h3>
             <p className="text-sm text-primary mb-3">{member.role}</p>
 
             {/* Expertise Badges */}
@@ -101,13 +101,16 @@ export function TeamSection() {
                 <Badge
                   key={skill}
                   variant="outline"
-                  className="text-[10px] px-2 py-1"
+                  className="text-[10px] px-2 py-1 border-white text-white hover:bg-white/10 transition-colors"
                 >
                   {skill}
                 </Badge>
               ))}
               {member.expertise.length > 3 && (
-                <Badge variant="secondary" className="text-[10px] px-2 py-1">
+                <Badge
+                  variant="secondary"
+                  className="text-[10px] px-2 py-1 border-white text-white"
+                >
                   +{member.expertise.length - 3}
                 </Badge>
               )}
