@@ -7,10 +7,10 @@ import "./globals.css"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "LEO Environmental Lab - Orbital Monitoring & Climate Analytics",
+  title: "LEO Environmental Lab ",
   description:
     "Real-time Low Earth Orbit monitoring, climate analytics, and sustainability verification powered by NASA data",
-  generator: "v0.app",
+  generator: "",
 }
 
 export default function RootLayout({
