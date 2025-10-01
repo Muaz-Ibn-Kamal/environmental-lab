@@ -1,6 +1,7 @@
 # 🚀 Project Name – LEO Environmental Lab
 
 
+
 ---
 
 ## 🌍 Project Overview  
@@ -28,23 +29,39 @@ The vision: Transform LEO from a congested, fragile environment into a **thrivin
 
 ---
 
-## 📊 Judging Criteria Mapping  
-Our project is designed to score highly across all NASA Space Apps criteria:  
 
-1. **Impact (20 pts)** → Protects LEO, ensures global benefits, inspires sustainable space use.  
-2. **Creativity (20 pts)** → Combines bold commercialization ideas with unique predictive solutions.  
-3. **Validity (20 pts)** → Backed by technical feasibility, modular design, and data-driven models.  
-4. **Relevance (20 pts)** → Directly addresses “Commercializing LEO” challenge with NASA data.  
-5. **Presentation (20 pts)** → Clear storytelling, strong structure, accessible for broad audiences.  
+## 🛰️ Datasets & APIs (NASA Resources)  
 
-**Total: 100 points (+ bonus for teamwork, UX, women participation, NASA data usage).**
+Our solution leverages key NASA datasets and APIs for LEO monitoring and predictive analysis:  
+
+1. **NASA Orbital Debris Program Office Data**  
+   - Description: Tracks and models orbital debris in LEO, MEO, and GEO.  
+   - Link: [https://orbitaldebris.jsc.nasa.gov/](https://orbitaldebris.jsc.nasa.gov/)  
+
+2. **CelesTrak / Space-Track.org (via NASA collaboration)**  
+   - Description: TLE (Two-Line Element) datasets for real-time satellite tracking.  
+   - Link: [https://celestrak.org/](https://celestrak.org/)  
+
+3. **NASA Earth Observing System Data and Information System (EOSDIS)**  
+   - Description: Provides Earth and orbital environmental datasets (climate, atmosphere, radiation).  
+   - Link: [https://earthdata.nasa.gov/](https://earthdata.nasa.gov/)  
+
+4. **NASA Open APIs (api.nasa.gov)**  
+   - **DONKI API** → Space weather events (solar activity, CMEs affecting satellites).  
+   - **NeoWs API** → Near-Earth object data for collision risk analysis.  
+   - **EPIC API** → Earth Polychromatic Imaging Camera data for environmental insights.  
+   - Documentation: [https://api.nasa.gov/](https://api.nasa.gov/)  
+
+5. **NASA Socioeconomic Data and Applications Center (SEDAC)**  
+   - Description: Human impact + environment data to align LEO sustainability with Earth needs.  
+   - Link: [https://sedac.ciesin.columbia.edu/](https://sedac.ciesin.columbia.edu/)  
 
 ---
 
 ## 🛠️ Tech Stack  
 - **Frontend:** React, Tailwind CSS, Recharts (data visualization)  
 - **Backend:** Node.js, Express.js, MongoDB  
-- **Data:** NASA Open Data (orbital & environmental datasets)  
+- **Data:** NASA Open Data (orbital debris, space weather, satellite tracking)  
 - **Prototype:** Simulation + Predictive Model Demo  
 
 ---
