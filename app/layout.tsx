@@ -5,7 +5,7 @@ import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import { Suspense } from "react"
-<link rel="shortcut icon" href="../public/team/FINAL-LOGO-12.png" type="image/x-icon" />
+
 export const metadata: Metadata = {
   title: "LEO Environmental Lab ",
   description:

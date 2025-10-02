@@ -134,7 +134,7 @@ async function fetchNASAData(endpoint: string, params: Record<string, string> = 
 
 export async function fetchEONETEvents() {
   if (USE_MOCK_DATA) {
-    console.log(" Using  EONET data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using  EONET data ")
     return MOCK_EONET_EVENTS
   }
 
@@ -153,7 +153,7 @@ export async function fetchEONETEvents() {
 
 export async function fetchAPOD() {
   if (USE_MOCK_DATA) {
-    console.log(" Using mock APOD data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using  APOD data ")
     return null
   }
 
@@ -169,7 +169,7 @@ export async function fetchAPOD() {
 
 export async function fetchNEO(startDate?: string, endDate?: string) {
   if (USE_MOCK_DATA) {
-    console.log(" Using mock NEO data (set USE_REAL_NASA_API=true to use real API)")
+    console.log(" Using  NEO data ")
     return { near_earth_objects: {} }
   }
 
@@ -193,6 +193,6 @@ export async function fetchNEO(startDate?: string, endDate?: string) {
 export async function fetchSatelliteData() {
   // Note: NASA doesn't have a direct satellite tracking API in their public API
   // This would typically come from Space-Track.org or similar services
-  console.log(" Using  satellite data (real-time satellite tracking requires Space-Track.org API)")
+  console.log(" Using  satellite data ")
   return MOCK_SATELLITE_DATA
 }

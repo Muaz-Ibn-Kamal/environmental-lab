@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/hero-section"
 import { LiveKPIBanner } from "@/components/live-kpi-banner"
 import { StatsSection } from "@/components/stats-section"
 import { FeaturesSection } from "@/components/features-section"
+<link rel="shortcut icon" href="../public/team/FINAL-LOGO-12.png" type="image/x-icon" />
 const EnhancedEarth3D = dynamic(
   () =>
     import("@/components/earth-3d-quantum").catch((err) => {
