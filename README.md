@@ -176,15 +176,38 @@ We followed an **agile, modular approach** during development:
 
 ---
 
-## 👥 Team  
+# 📚 References  
 
-Developed during the **NASA Space Apps Challenge 2025**.  
-We collaborated using **GitHub, Notion, and Figma** to bring this vision to life within the hackathon timeframe.  
+Crisp, N.H., Roberts, P.C., Livadiotti, S., Oiko, V.T.A., Edmondson, S., Haigh, S.J., Huyton, C., Sinpetru, L.A., Smith, K.L., Worrall, S.D. and Becedas, J., 2020. **The benefits of very low earth orbit for earth observation missions.** *Progress in Aerospace Sciences*, 117, p.100619.  
 
-- 🌌 **Project Lead** – Muaz Ibn Kamal  
-- 🛰️ **Frontend & Visualization**
-- 📊 **Backend & API Integration** 
-- ♻️ **Sustainability & ESG Framework** 
+Llop, J.V., Roberts, P.C., Hao, Z., Tomas, L.R. and Beauplet, V., 2014, November. **Very low earth orbit mission concepts for earth observation: Benefits and challenges.** In *Reinventing Space Conference* (pp. 18-21).  
+
+Pardini, C. and Anselmo, L., 2021. **Evaluating the impact of space activities in low earth orbit.** *Acta Astronautica*, 184, pp.11-22.  
+
+Prol, F.S., Ferre, R.M., Saleem, Z., Välisuo, P., Pinell, C., Lohan, E.S., Elsanhoury, M., Elmusrati, M., Islam, S., Çelikbilek, K. and Selvan, K., 2022. **Position, navigation, and timing (PNT) through low earth orbit (LEO) satellites: A survey on current status, challenges, and opportunities.** *IEEE Access*, 10, pp.83971-84002.  
+
+Ilcev, S.D., 2010, September. **Low earth orbits (LEO).** In *2010 20th International Crimean Conference "Microwave & Telecommunication Technology"* (pp. 406-408). IEEE.  
+
+Vishwakarma, S., Chauhan, A.S. and Aasma, S., 2014. **A comparative study of satellite orbits as low Earth orbit (LEO) and geostationary Earth orbit (GEO).** *SAMRIDDHI: A Journal of Physical Sciences, Engineering and Technology*, 6(02), pp.99-106.  
+
+Cakaj, S., Kamo, B., Lala, A. and Rakipi, A., 2014. **The coverage analysis for low earth orbiting satellites at low elevation.** *International Journal of Advanced Computer Science and Applications*, 5(6).  
+
+Ocaya, R.O., Malevu, T.D. 2025. **Uncontrolled reentry of Low Earth Orbit Decaying Objects: a hidden threat to global safety and legal frameworks.** *npj Space Exploration*, 1, 9. https://doi.org/10.1038/s44453-025-00007-8  
+
+Paravano, A., Rosseau, B., Locatelli, G., Weinzierl, M., Trucco, P., 2025. **Toward the LEO economy: A value assessment of commercial space stations for space and non-space users.** *Acta Astronautica*, 228, pp.453-473. https://doi.org/10.1016/j.actaastro.2024.11.060  
+
+Benas, A.D., Bilash, D., Chiavetta, P., Cottee, J., Aloy, S.F., Farrow, J., Forbes, S., Natividad, M.G., Greenhalgh, D., Gupta, M., Morelli, L., O'Reilly, R.M., Santhosh, A., Shahid, M., Shapiro, B., Pouwels, C., Tamai, C., Tol, A.v.L., Zanus, E., 2025. **Feasibility study for a commercial space station in low earth orbit.** *Acta Astronautica*, 229, pp.523-533. https://doi.org/10.1016/j.actaastro.2024.09.058  
+
+Zea, L., Warren, L., Ruttley, T. et al., 2024. **Orbital Reef and commercial low Earth orbit destinations—upcoming space research opportunities.** *npj Microgravity*, 10, 43. https://doi.org/10.1038/s41526-024-00363-x  
+
+Mazzucato, M., Robinson, D.K.R., 2018. **Co-creating and directing Innovation Ecosystems? NASA's changing approach to public-private partnerships in low-earth orbit.** *Technological Forecasting and Social Change*, 136, pp.166-177. https://doi.org/10.1016/j.techfore.2017.03.034  
+
+Asner, G.P., 2009. **Tropical forest carbon assessment: integrating satellite and airborne mapping approaches.** *Environmental Research Letters*, 4(3), p.034009.  
+
+Tollefson, J., 2016. **Carbon-sensing satellite system faces high hurdles.** *Nature*, 533(7604), pp.446-447.  
+
+Goetz, S.J., Baccini, A., Laporte, N.T., Johns, T., Walker, W., Kellndorfer, J., Houghton, R.A. and Sun, M., 2009. **Mapping and monitoring carbon stocks with satellite observations: a comparison of methods.** *Carbon Balance and Management*, 4(1), p.2.  
+
 
 ---
 
