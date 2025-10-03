@@ -147,17 +147,17 @@ We followed an **agile, modular approach** during development:
 ## 📸 Project Preview  
 
 ### 🌍 Quantum Earth Visualization  
-![Quantum Earth Visualization](./Website/Fourth.png)  
+![Quantum Earth Visualization](./assets/screenshot-quantum.png)  
 
 ---
 
 ### 📊 Investor Dashboard  
-![Investor Dashboard](./Website/Fifith.png)  
+![Investor Dashboard](./assets/screenshot-investor.png)  
 
 ---
 
 ### 🛰️ Operational Dashboard  
-![Operational Dashboard](./Website/7th.png)  
+![Operational Dashboard](./assets/screenshot-operational.png)  
 
 ---
 
