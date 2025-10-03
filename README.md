@@ -182,14 +182,10 @@ Developed during the **NASA Space Apps Challenge 2025**.
 We collaborated using **GitHub, Notion, and Figma** to bring this vision to life within the hackathon timeframe.  
 
 - 🌌 **Project Lead** – Muaz Ibn Kamal  
-- 🛰️ **Frontend & Visualization** – [Your teammate’s name]  
-- 📊 **Backend & API Integration** – [Your teammate’s name]  
-- ♻️ **Sustainability & ESG Framework** – [Your teammate’s name]  
+- 🛰️ **Frontend & Visualization**
+- 📊 **Backend & API Integration** 
+- ♻️ **Sustainability & ESG Framework** 
 
 ---
 
-## 📜 License  
 
-This project is licensed under the **MIT License** – free to use, modify, and distribute with attribution.  
-
----
