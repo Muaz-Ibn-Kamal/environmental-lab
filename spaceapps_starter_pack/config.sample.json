@@ -1,0 +1,6 @@
+{
+  "NASA_API_KEY": "YOUR_KEY_HERE",
+  "SLACK_WEBHOOK_URL": "https://hooks.slack.com/services/XXX/YYY/ZZZ",
+  "EARTHDATA_USERNAME": "your_earthdata_username",
+  "EARTHDATA_PASSWORD": "your_earthdata_password"
+}
