@@ -172,7 +172,7 @@ We followed an **agile, modular approach** during development:
 
 ## 🌍 Demo  
 
-🔗 [Visit Live Project]((https://environmental-lab.us/))  
+🔗 [Visit Live Project](https://environmental-lab.us/)  
 
 ---
 
